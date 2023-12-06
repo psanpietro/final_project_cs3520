@@ -7,6 +7,7 @@
 
 #include "GameObject.h"
 
+//Paddle Class
 class Paddle : public GameObject {
 private:
     sf::RectangleShape shape;
