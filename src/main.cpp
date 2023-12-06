@@ -43,6 +43,9 @@ int main(int argc, char** argv) {
             galagaController.update(sf::seconds(1.0f / 60.0f));
             galagaController.render();
         }
+    } else if (game == "-t") {
+        std::cout << "compiled successfully" << std::endl;
+        return 0;
     } else {
         std::cerr << "Unknown game: " << game << "\n";
         return 1;
