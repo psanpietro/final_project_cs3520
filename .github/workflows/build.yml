@@ -26,6 +26,7 @@ jobs:
           echo " "
           g++ --version
           cmake --version
+          sudo apt-get install libx11-dev libxrandr-dev
 
       - name: Create build environment
         #run: cmake -E make_directory ${{runner.workspace}}/build
