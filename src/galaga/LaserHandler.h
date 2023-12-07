@@ -18,6 +18,7 @@ public:
     void update(sf::Time deltaTime);
     void render(sf::RenderWindow& window);
 
+    bool checkCollision(const EnemyShip& enemy);
 };
 
 

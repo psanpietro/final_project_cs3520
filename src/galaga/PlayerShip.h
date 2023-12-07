@@ -16,6 +16,8 @@ private:
     LaserHandler& laserHandler;
     // indicate whether a new laser has been created
     bool newLaserCreated;
+    //this value is used to prevent a laser from being created unless 60 frames have been rendered
+    int timeUntilNewLaser;
 public:
     PlayerShip(float x, float y, LaserHandler& laserHandler);
 
@@ -25,6 +27,9 @@ public:
 
     //attempt to limit the creation of a laser to one at a time.
     void limitLaserCreation();
+
+    //takes in an EnemyShip and returns true if it collided with itself or a laser
+    bool checkCollision(const EnemyShip& enemy);
 
 };
 

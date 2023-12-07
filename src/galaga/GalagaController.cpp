@@ -21,18 +21,15 @@ void GalagaController::update(sf::Time deltaTime) {
         enemy.update(deltaTime);
     }
 
-    for (auto& playerLaser : playerLasers) {
-        playerLaser.update(deltaTime);
-    }
-
+    /*
     for (auto& enemyLaser : enemyLasers) {
         enemyLaser.update(deltaTime);
     }
-
+    */
     //check if any ship has been hit and if more enemies need to be spawned.
     handleCollisions();
     cleanup();
-    spawnEnemies();
+    //spawnEnemies();
 }
 
 void GalagaController::render() {
@@ -69,23 +66,25 @@ void GalagaController::spawnEnemies() {
 }
 
 void GalagaController::handleCollisions() {
-    //stub need to implement
+    //iterates through the enemyShips and marks any for removal if they collide with the player or their Lasers
+    for (auto it = enemies.begin(); it != enemies.end();) {
+        if (player.checkCollision(*it)) {
+            enemies.erase(it);
+            break;
+        } else {
+            ++it;
+        }
+    }
 }
 
 void GalagaController::cleanup() {
-    // handle player Lasers that are out of bounds this needs to be moved to the laserHandler class.
-    playerLasers.erase(
-            std::remove_if(playerLasers.begin(), playerLasers.end(), [&](const Laser& Laser) {
-                return Laser.getBounds().top + Laser.getBounds().height < 0;
-            }),
-            playerLasers.end()
-    );
 
-    //ditto to above point
+    /* no enemy lasers as of current moment
     enemyLasers.erase(
             std::remove_if(enemyLasers.begin(), enemyLasers.end(), [&](const Laser& Laser) {
                 return Laser.getBounds().top > window.getSize().y;
             }),
             enemyLasers.end()
     );
+     */
 }

@@ -7,9 +7,10 @@
 
 PlayerShip::PlayerShip(float x, float y, LaserHandler& laserHandler1)
         : speed(200.f), laserHandler(laserHandler1) {
-    shape.setSize(sf::Vector2f(50.f, 30.f));
+    shape.setSize(sf::Vector2f(30.f, 50.f));
     shape.setPosition(x, y);
     shape.setFillColor(sf::Color::Green);
+    timeUntilNewLaser = 0;
 }
 
 void PlayerShip::handleInput() {
@@ -38,8 +39,27 @@ void PlayerShip::update(sf::Time deltaTime) {
 void PlayerShip::render(sf::RenderWindow& window) {
     window.draw(shape);
     laserHandler.render(window);
+    ++timeUntilNewLaser;
+    if (timeUntilNewLaser >= 60){
+        newLaserCreated = false;
+        timeUntilNewLaser = 0;
+    }
+
 }
 
 void PlayerShip::limitLaserCreation()  {
     newLaserCreated = true;
+}
+
+bool PlayerShip::checkCollision(const EnemyShip& enemy) {
+    //first check collision against this PlayerShip
+    sf::FloatRect playerBounds = shape.getGlobalBounds();
+    sf::FloatRect enemyBounds = enemy.getBounds();
+
+    if (playerBounds.intersects(enemyBounds)) {
+        return true;
+    }
+    //second ask the laserHandler if any laser has hit that enemy ship
+    return laserHandler.checkCollision(enemy);
+
 }
