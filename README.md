@@ -30,8 +30,11 @@ https://github.com/SFML/imgui-sfml
 
 In order to run the program, OpenGl needs to be installed with a couple xlib APIs.
 These can be installed with these commands:
+
           sudo apt-get install libx11-dev libxrandr-dev
+          
           sudo apt-get install libgl1-mesa-dev
+          
           sudo apt-get install libudev-dev
 
 The program relies on command line inputs to pick the game. Those three commands are: pong, galaga, snake. There is a 
