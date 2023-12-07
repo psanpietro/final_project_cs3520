@@ -25,7 +25,14 @@ add_executable(final_project_cs3520 src/main.cpp
         src/gui/GameSelector.cpp
         src/gui/GameSelector.h
         src/galaga/LaserHandler.cpp
-        src/galaga/LaserHandler.h)
+        src/galaga/LaserHandler.h
+        src/snake/SnakeController.cpp
+        src/snake/SnakeController.h
+        src/snake/Snake.cpp
+        src/snake/Snake.h
+        src/snake/Food.cpp
+        src/snake/Food.h
+)
 include(FetchContent)
 
 set(SFML_VERSION 2.5.1)
