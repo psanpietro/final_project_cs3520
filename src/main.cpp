@@ -2,7 +2,7 @@
 #include "imgui-SFML.h"
 #include "pong/PongController.h"
 #include "galaga/GalagaController.h"
-#include "snake/SnakeController.h"  // Include SnakeController
+#include "snake/SnakeController.h"
 
 int main(int argc, char** argv) {
     if (argc != 2) {
