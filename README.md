@@ -22,3 +22,15 @@ that would cause the window and whatever game was on it to flash rapidly so I ha
 
 The program relies on command line inputs to pick the game. Those three commands are: pong, galaga, snake. There is a 
 -t input as well that shows that the project will compile on GitHub and therefore other systems.
+
+Pong Controls:
+
+Left Paddle is controlled by W and S. Right Paddle is controlled by Up and Down.
+
+Galaga Controls:
+
+PlayerShip is controlled by Left and Right and Spacebar for laser.
+
+Snake Controls:
+
+Up, Left, Right, Down are the movement controls.
