@@ -12,9 +12,8 @@ int main(int argc, char** argv) {
 
     std::string game = argv[1];
 
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Game Window");
-
     if (game == "pong") {
+        sf::RenderWindow window(sf::VideoMode(800, 600), "Game Window");
         PongController pongController(window);
 
         while (window.isOpen()) {
@@ -29,6 +28,7 @@ int main(int argc, char** argv) {
             pongController.render();
         }
     } else if (game == "galaga") {
+        sf::RenderWindow window(sf::VideoMode(800, 600), "Game Window");
         GalagaController galagaController(window);
 
         while (window.isOpen()) {
@@ -43,6 +43,7 @@ int main(int argc, char** argv) {
             galagaController.render();
         }
     } else if (game == "snake") {
+        sf::RenderWindow window(sf::VideoMode(800, 600), "Game Window");
         SnakeController snakeController(window);
 
         while (window.isOpen()) {
