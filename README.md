@@ -18,7 +18,21 @@ moving snake. I left both of them in to demonstrate that I did use the libraries
 I also implemented a GameSelecter GUI that did allow for picking of games, however it also caused a terrible graphical glitch
 that would cause the window and whatever game was on it to flash rapidly so I had to scrap the idea since I was not able to fix it.
 
+Libraries used:
+ImGui:
+https://github.com/ocornut/imgui
+SMFL:
+https://github.com/SFML/SFML
+ImGui-SFML
+https://github.com/SFML/imgui-sfml
+
 ## How To Run The Program
+
+In order to run the program, OpenGl needs to be installed with a couple xlib APIs.
+These can be installed with these commands:
+          sudo apt-get install libx11-dev libxrandr-dev
+          sudo apt-get install libgl1-mesa-dev
+          sudo apt-get install libudev-dev
 
 The program relies on command line inputs to pick the game. Those three commands are: pong, galaga, snake. There is a 
 -t input as well that shows that the project will compile on GitHub and therefore other systems.
@@ -34,3 +48,6 @@ PlayerShip is controlled by Left and Right and Spacebar for laser.
 Snake Controls:
 
 Up, Left, Right, Down are the movement controls.
+
+Pong In Action:
+![image](https://github.com/psanpietro/final_project_cs3520/assets/132850603/22e4e1e9-a5d9-4fac-9460-d3c136089d16)
